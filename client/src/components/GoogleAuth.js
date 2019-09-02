@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ApiKey from './apiKeys/GoogleApi';
 
 class GoogleAuth extends React.Component {
     state = { isSignedIn: null };
@@ -8,7 +8,7 @@ class GoogleAuth extends React.Component {
         // 앞에 window를 붙여준다.
         window.gapi.load('client:auth2', () => {
             window.gapi.client.init({
-                clientId: '1722646757-rcli88ibs77bmrfsga0bdaq8uqg56si4.apps.googleusercontent.com',
+                clientId: ApiKey.ClientId,
                 scope: 'email'
             }).then(() => {
                 this.auth = window.gapi.auth2.getAuthInstance();
